@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Romane Tanoh — Développeuse Frontend</title>
+<meta name="description" content="Portfolio de Romane Tanoh, développeuse frontend & design graphique. HTML, CSS, JavaScript, conception d'interfaces et de systèmes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Barre de titre façon éditeur -->
+<div class="titlebar">
+  <div class="titlebar-dots"><span></span><span></span><span></span></div>
+  <span class="titlebar-path">romane-tanoh — portfolio</span>
+  <button id="menu-icon" class="menu-icon" aria-label="Ouvrir le menu" aria-expanded="false">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+</div>
+
+<div class="ide">
+
+  <!-- Explorateur de fichiers = navigation -->
+  <nav class="sidebar" id="sidebar" aria-label="Navigation principale">
+    <div class="sidebar-title">EXPLORATEUR</div>
+    <a href="#about" class="file-link active" data-target="about">
+      <i class="fa-solid fa-user file-icon icon-tsx"></i>about.tsx
+    </a>
+    <a href="#experience" class="file-link" data-target="experience">
+      <i class="fa-solid fa-code-branch file-icon icon-json"></i>experience.json
+    </a>
+    <a href="#projects" class="file-link" data-target="projects">
+      <i class="fa-solid fa-folder-open file-icon icon-folder"></i>projects/
+    </a>
+    <a href="#contact" class="file-link" data-target="contact">
+      <i class="fa-solid fa-terminal file-icon icon-sh"></i>contact.sh
+    </a>
+
+    <div class="sidebar-footer">
+      <a href="https://github.com" target="_blank" rel="noopener" class="btn-outline">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+      <div class="social">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://wa.me/2250565528879" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Onglets ouverts -->
+  <div class="tabbar" aria-hidden="true">
+    <span class="tab active">about.tsx</span>
+    <span class="tab">experience.json</span>
+    <span class="tab">projects/</span>
+    <span class="tab">contact.sh</span>
+  </div>
+
+  <main class="editor">
+
+    <!-- about.tsx -->
+    <section class="pane" id="about">
+      <div class="code-block hero-block">
+        <div class="gutter" aria-hidden="true"></div>
+        <div class="code-content">
+          <p><span class="tok-comment">// portfolio/about.tsx</span></p>
+          <p><span class="tok-kw">import</span> { Romane } <span class="tok-kw">from</span> <span class="tok-str">'./developer'</span>;</p>
+          <p>&nbsp;</p>
+          <p><span class="tok-kw">export const</span> <span class="tok-func">profil</span> = {</p>
+          <p class="indent">nom: <span class="tok-str">"Romane Tanoh"</span>,</p>
+          <p class="indent">role: <span class="tok-str">"Développeuse Frontend"</span>,</p>
+          <p class="indent">specialites: [<span class="tok-str">"HTML"</span>, <span class="tok-str">"CSS"</span>, <span class="tok-str">"JavaScript"</span>, <span class="tok-str">"UI Design"</span>],</p>
+          <p>};</p>
+        </div>
+      </div>
+
+      <div class="hero-main">
+        <img src="ng.jpeg" alt="Portrait de Romane Tanoh" class="portrait">
+        <div class="hero-text">
+          <span class="eyebrow"><span class="cursor-dot"></span> disponible pour de nouveaux projets</span>
+          <h1>Romane Tanoh</h1>
+          <p class="typed-role"><span id="typed"></span><span class="type-cursor">|</span></p>
+          <p class="lede">Je conçois des interfaces web modernes et cohérentes, du prototype à la mise en production — en gardant un code propre et une expérience utilisateur soignée.</p>
+          <div class="btn-group">
+            <a href="GN_CV.png" class="btn btn-primary" download>
+              <i class="fa-solid fa-download"></i> Télécharger mon CV
+            </a>
+            <a href="#contact" class="btn btn-ghost">Me contacter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- experience.json -->
+    <section class="pane" id="experience">
+      <h2 class="section-title"><span class="tok-comment">//</span> Expérience</h2>
+      <p class="section-sub">Un aperçu de mes domaines de compétence, année par année.</p>
+
+      <div class="exp-grid">
+        <article class="exp-card">
+          <div class="exp-head">
+            <i class="fa-solid fa-code"></i>
+            <span class="exp-year">2021</span>
+          </div>
+          <h3>Développement Frontend</h3>
+          <p>Maîtrise de HTML, CSS et JavaScript pour concevoir des interfaces modernes, dynamiques et centrées sur l'utilisateur.</p>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-head">
+            <i class="fa-solid fa-pen-nib"></i>
+            <span class="exp-year">2022</span>
+          </div>
+          <h3>Design Graphique</h3>
+          <p>Conception de visuels percutants et cohérents avec les outils du secteur, adaptés aux besoins de communication visuelle.</p>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-head">
+            <i class="fa-solid fa-diagram-project"></i>
+            <span class="exp-year">2023</span>
+          </div>
+          <h3>Conception de Systèmes</h3>
+          <p>Architectures logicielles robustes, évolutives et performantes, adaptées aux besoins des applications modernes.</p>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-head">
+            <i class="fa-solid fa-list-check"></i>
+            <span class="exp-year">2024</span>
+          </div>
+          <h3>Gestion de Contenu</h3>
+          <p>Stratégie et gestion de contenu digital : conception, planification et optimisation de contenus engageants.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- projects/ -->
+    <section class="pane" id="projects">
+      <h2 class="section-title"><span class="tok-comment">//</span> Projets récents</h2>
+      <p class="section-sub">Une sélection de réalisations, du site vitrine à l'application e-commerce.</p>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-thumb"><img src="folio.jpg" alt="Aperçu du site de location de salle événementielle"></div>
+          <div class="project-body">
+            <span class="project-tag">01 — site vitrine</span>
+            <h3>Location de salle événementielle</h3>
+            <p>Site vitrine pour la réservation d'une salle événementielle.</p>
+            <div class="btn-group">
+              <a href="salle.html" class="btn-outline">Voir le projet</a>
+              <a href="#" class="btn-text">Code source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb"><img src="get.webp" alt="Aperçu de l'application e-commerce"></div>
+          <div class="project-body">
+            <span class="project-tag">02 — e-commerce</span>
+            <h3>Application e-commerce</h3>
+            <p>Panier dynamique et système de paiement intégré.</p>
+            <div class="btn-group">
+              <a href="administre.html" class="btn-outline">Voir le projet</a>
+              <a href="#" class="btn-text">Code source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb"><img src="loi.avif" alt="Aperçu du site de voyage d'affaires"></div>
+          <div class="project-body">
+            <span class="project-tag">03 — voyage</span>
+            <h3>Site voyages d'affaires</h3>
+            <p>Site dynamique dédié au voyage dans le monde des affaires.</p>
+            <div class="btn-group">
+              <a href="#" class="btn-outline">Voir le projet</a>
+              <a href="#" class="btn-text">Code source</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- contact.sh -->
+    <section class="pane" id="contact">
+      <h2 class="section-title"><span class="tok-comment">//</span> Contactez-moi</h2>
+      <p class="section-sub">Un projet en tête ? Écrivez-moi, je réponds rapidement.</p>
+
+      <div class="terminal">
+        <div class="terminal-head">
+          <span></span><span></span><span></span>
+          <span class="terminal-title">contact.sh</span>
+        </div>
+        <form id="contact-form" class="terminal-form">
+          <label for="user_name">$ nom <span aria-hidden="true">--required</span></label>
+          <input type="text" name="user_name" id="user_name" placeholder="Votre nom" required>
+
+          <label for="user_email">$ email <span aria-hidden="true">--required</span></label>
+          <input type="email" name="user_email" id="user_email" placeholder="vous@exemple.com" required>
+
+          <label for="message">$ message <span aria-hidden="true">--required</span></label>
+          <textarea name="message" id="message" placeholder="Expliquez vos envies…" required></textarea>
+
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane"></i> Envoyer le message
+          </button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="#about">À propos</a>
+        <a href="#experience">Expérience</a>
+        <a href="#projects">Projets</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="copyright">&copy; 2024 Romane Tanoh. Tous droits réservés.</div>
+    </footer>
+
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="lef.js"></script>
+</body>
+</html>

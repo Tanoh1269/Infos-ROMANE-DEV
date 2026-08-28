@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Romane Tanoh</title>
+    
+    <link rel="stylesheet" href="jobe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ==================== PAGE BOUTIQUE  ==================== -->
+    <div id="boutiquePage" class="boutique-container">
+        <header class="boutique-header">
+            <div class="logo-boutique">
+                <img src="Logo avocat & droit noir et bleu avec rectangle.png" alt="Logo">
+                <h1>ROMANE <span style="color: #3498db;">TANOH</span></h1>
+            </div>
+            
+            <nav class="boutique-nav">
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span class="cart-count" id="cartCount"></span>
+                </div>
+                <a href="#produits">Produits</a>
+                <a href="#categories">Catégories</a>
+                <a href="#contact">Contact</a>
+                <button class="admin-login-btn" id="adminLoginBtn">
+                    <i class="fas fa-lock"></i> Admin
+                </button>
+            </nav>
+        </header>
+        
+        <section id="produits">
+            <h2 style="margin-bottom: 30px; color: #2c3e50;">Nos Produits</h2>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Produits chargés par JavaScript -->
+            </div>
+        </section>
+    </div>
+    
+    <!-- ==================== MODAL DE CONNEXION ADMIN ==================== -->
+    <div class="login-modal" id="loginModal">
+        <button class="close-login" id="closeLogin">&times;</button>
+        <div class="login-header">
+            <h3>Connexion Administrateur</h3>
+            <p>Accédez au panneau d'administration</p>
+        </div>
+        
+        <form id="loginForm">
+            <input type="text" id="adminUsername" placeholder="Nom d'utilisateur" required>
+            <input type="password" id="adminPassword" placeholder="Mot de passe" required>
+            <button type="submit" class="login-btn">Se connecter</button>
+        </form>
+        
+        <div class="login-error" id="loginError">
+            Identifiants incorrects
+        </div>
+        
+        <p style="text-align: center; margin-top: 20px; font-size: 14px; color: #7f8c8d;">
+            Identifiants par défaut: Romane / Romane@12
+        </p>
+    </div>
+    
+    <!-- ==================== INTERFACE ADMINISTRATEUR ==================== -->
+    <div id="adminPage" class="admin-container">
+        <header class="admin-header">
+            <div class="logo-boutique">
+                <img src="Logo avocat & droit noir et bleu avec rectangle.png" alt="Logo">
+                <h2>PANEL ADMIN - ROMANE TANOH</h2>
+            </div>
+            <button class="admin-logout" id="adminLogout">
+                <i class="fas fa-sign-out-alt"></i> Déconnexion
+            </button>
+        </header>
+        
+        <nav class="admin-nav">
+            <ul>
+                <li><a href="#" class="active" data-section="dashboard">Tableau de bord</a></li>
+                <li><a href="#" data-section="products">Produits</a></li>
+                <li><a href="commande.html" data-section="orders">Commandes</a></li>
+                <li><a href="#" data-section="clients">Clients</a></li>
+                <li><a href="#" data-section="settings">Paramètres</a></li>
+            </ul>
+        </nav>
+        
+        <div class="admin-content">
+            <!-- Section Tableau de bord -->
+            <div id="dashboardSection" class="admin-section">
+                <h2 style="color: #2c3e50; margin-bottom: 20px;">Tableau de bord</h2>
+                
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <h3>VENTES TOTALES</h3>
+                        <h2>1,250,000 FCFA</h2>
+                        <span class="stat-change">+12.5%</span>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h3>COMMANDES</h3>
+                        <h2>48</h2>
+                        <span class="stat-change">+8.2%</span>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h3>CLIENTS</h3>
+                        <h2>156</h2>
+                        <span class="stat-change">+5.7%</span>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h3>PRODUITS</h3>
+                        <h2>24</h2>
+                        <span class="stat-change">+3.2%</span>
+                    </div>
+                </div>
+                
+                <div class="admin-table">
+                    <div class="table-header">
+                        <h3 style="color: #2c3e50;">Commandes récentes</h3>
+                    </div>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>N° Commande</th>
+                                <th>Client</th>
+                                <th>Date</th>
+                                <th>Montant</th>
+                                <th>Statut</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminOrdersTable">
+                            <!-- Commandes chargées par JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Section Produits (cachée par défaut) -->
+            <div id="productsSection" class="admin-section" style="display: none;">
+                <div class="admin-table">
+                    <div class="table-header">
+                        <h3 style="color: #2c3e50;">Gestion des produits</h3>
+                        <button class="add-product-btn" id="addProductAdminBtn">
+                            <i class="fas fa-plus"></i> Ajouter un produit
+                        </button>
+                    </div>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Produit</th>
+                                <th>Référence</th>
+                                <th>Catégorie</th>
+                                <th>Prix</th>
+                                <th>Stock</th>
+                                <th>Statut</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminProductsTable">
+                            <!-- Produits chargés par JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Autres sections... -->
+        </div>
+    </div>
+    
+    <!-- ==================== MODAL AJOUT PRODUIT ADMIN ==================== -->
+    <div class="product-form-modal" id="productFormModal">
+        <h3 style="color: #2c3e50; margin-bottom: 20px;" id="productFormTitle">Ajouter un produit</h3>
+        
+        <form id="productAdminForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="productNameAdmin">Nom du produit *</label>
+                    <input type="text" id="productNameAdmin" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="productRefAdmin">Référence *</label>
+                    <input type="text" id="productRefAdmin" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="productPriceAdmin">Prix (FCFA) *</label>
+                    <input type="number" id="productPriceAdmin" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="productStockAdmin">Quantité en stock *</label>
+                    <input type="number" id="productStockAdmin" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="productCategoryAdmin">Catégorie</label>
+                    <select id="productCategoryAdmin">
+                        <option value="drone">Drone</option>
+                        <option value="electronique">Électronique</option>
+                        <option value="accessoire">Accessoire</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="productStatusAdmin">Statut</label>
+                    <select id="productStatusAdmin">
+                        <option value="active">Actif</option>
+                        <option value="inactive">Inactif</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="productDescriptionAdmin">Description</label>
+                <textarea id="productDescriptionAdmin" rows="3"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="productImageAdmin">Image URL</label>
+                <input type="text" id="productImageAdmin" placeholder="https://exemple.com/image.jpg">
+            </div>
+
+            <div class="form-group">
+                <label for="produitPhoto">Photo du produit:</label>
+                <input type="file" id="produitPhoto" accept="image/*">
+            </div>
+            
+            <div class="form-actions">
+                <button type="button" class="cancel-btn" id="cancelProductForm">Annuler</button>
+                <button type="submit" class="save-btn" id="saveProductBtn">Enregistrer</button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- ==================== MODAL PANIER ==================== -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Votre Panier</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <p id="emptyCartMessage" style="text-align: center; color: #999; padding: 40px 0;">
+                Votre panier est vide
+            </p>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">0 FCFA</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Passer la commande</button>
+        </div>
+    </div>
+    
+    <!-- ==================== MODAL PAIEMENT ==================== -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="payment-header">
+            <h3>Finaliser votre commande</h3>
+            <button class="close-payment" id="closePayment">&times;</button>
+        </div>
+        
+        <div class="payment-methods">
+            <h4>Moyens de paiement</h4>
+            
+            <div class="payment-option" data-method="wave">
+                <div class="payment-icon" style="background: #0565ff;">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div>
+                    <h5 style="color: #0565ff;">Wave</h5>
+                    <p>Paiement mobile</p>
+                </div>
+            </div>
+            
+            <div class="payment-option" data-method="orange-money">
+                <div class="payment-icon" style="background: #ff7900;">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div>
+                    <h5 style="color: #ff7900;">Orange Money</h5>
+                    <p>Paiement mobile</p>
+                </div>
+            </div>
+            
+            <div class="payment-option" data-method="mtn-momo">
+                <div class="payment-icon" style="background: #ffcc00;">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div>
+                    <h5 style="color: #333;">MTN MoMo</h5>
+                    <p>Paiement mobile</p>
+                </div>
+            </div>
+            
+            <div class="payment-option" data-method="carte-bancaire">
+                <div class="payment-icon" style="background: #27ae60;">
+                    <i class="far fa-credit-card"></i>
+                </div>
+                <div>
+                    <h5 style="color: #27ae60;">Carte Bancaire</h5>
+                    <p>Visa, Mastercard</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="payment-form" id="paymentForm">
+            <div class="form-group">
+                <label for="phoneNumber">Numéro de téléphone</label>
+                <input type="tel" id="phoneNumber" placeholder="Ex: 07 00 00 00 00">
+            </div>
+            
+            <div class="form-group">
+                <label for="paymentAmount">Montant à payer</label>
+                <input type="text" id="paymentAmount" readonly>
+            </div>
+            
+            <button id="confirmPayment">Confirmer le paiement</button>
+        </div>
+    </div>
+    
+    <!-- ==================== OVERLAY ==================== -->
+    <div class="overlay" id="overlay"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

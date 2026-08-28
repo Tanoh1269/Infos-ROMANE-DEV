@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Événium - Location de Salles Événementielles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="tanoh.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">JOJO <span>BARAKA</span></a>
+                <ul class="nav-links">
+                    <li><a href="folio.html">Accueil</a></li>
+                    <li><a href="#salles">Nos Salles</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Location de Salles Événementielles d'Exception</h1>
+                <p>Découvrez nos espaces prestigieux pour organiser vos événements inoubliables</p>
+                <a href="#salles" class="btn">Découvrir nos salles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-form">
+                <div class="form-group">
+                    <label for="date">Date de l'événement</label>
+                    <input type="date" id="date">
+                </div>
+                <div class="form-group">
+                    <label for="capacity">Nombre d'invités</label>
+                    <select id="capacity">
+                        <option value="">Sélectionnez</option>
+                        <option value="50">Jusqu'à 50 personnes</option>
+                        <option value="100">50 à 100 personnes</option>
+                        <option value="200">100 à 200 personnes</option>
+                        <option value="300">Plus de 200 personnes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="type">Type d'événement</label>
+                    <select id="type">
+                        <option value="">Sélectionnez</option>
+                        <option value="mariage">Mariage</option>
+                        <option value="entreprise">Événement d'entreprise</option>
+                        <option value="anniversaire">Anniversaire</option>
+                        <option value="conference">Conférence</option>
+                        <option value="dote">Dote</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>&nbsp;</label>
+                    <button class="btn" id="search-btn">Rechercher</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Salles Section -->
+    <section class="salles" id="salles">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Salles Événementielles</h2>
+                <p>Des espaces uniques pour chaque occasion</p>
+            </div>
+            <div class="salles-grid">
+                <!-- Salle 1 -->
+                <div class="salle-card">
+                    <div class="salle-img">
+                        <img src="grande.jpeg" alt="Salle ">
+                    </div>
+                    <div class="salle-info">
+                        <h3>Grande Salle de Réception</h3>
+                        <div class="salle-meta">
+                            <span><i class="fas fa-users"></i> Jusqu'à 300 personnes</span>
+                            <span class="salle-price">À partir de 40000 Fr par jour</span>
+                        </div>
+                        <p>Une salle spacieuse et élégante, parfaite pour les mariages et les grands événements.</p>
+                        <button class="btn reserve-btn" data-salle="Grande Salle de Réception">Réserver</button>
+                    </div>
+                </div>
+                
+                <!-- Salle 2 -->
+                <div class="salle-card">
+                    <div class="salle-img">
+                        <img src="confert.jpg" alt="Salle de conférence">
+                    </div>
+                    <div class="salle-info">
+                        <h3>Salle de Conférence Moderne</h3>
+                        <div class="salle-meta">
+                            <span><i class="fas fa-users"></i> Jusqu'à 150 personnes</span>
+                            <span class="salle-price">À partir de 35000 Fr par jour</span>
+                        </div>
+                        <p>Équipée des dernières technologies pour vos séminaires et conférences professionnelles.</p>
+                        <button class="btn reserve-btn" data-salle="Salle de Conférence Moderne">Réserver</button>
+                    </div>
+                </div>
+                
+                <!-- Salle 3 -->
+                <div class="salle-card">
+                    <div class="salle-img">
+                        <img src="Conference Room 1-CR1.jpg" alt="Salle intime">
+                    </div>
+                    <div class="salle-info">
+                        <h3>Salle de réunions</h3>
+                        <div class="salle-meta">
+                            <span><i class="fas fa-users"></i> Jusqu'à 50 personnes</span>
+                            <span class="salle-price">À partir de 50000 Fr par jour</span>
+                        </div>
+                        <p>Un cadre chaleureux et raffiné pour vos événements privés et réunions familiales.</p>
+                        <button class="btn reserve-btn" data-salle="Salon Intime">Réserver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Services</h2>
+                <p>Une expérience complète pour votre événement</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Service Traiteur</h3>
+                    <p>Des menus personnalisés préparés par nos chefs étoilés.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Animation & Sonorisation</h3>
+                    <p>Équipement professionnel et DJ pour ambiancer votre événement.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Décoration</h3>
+                    <p>Des idées créatives et un service de décoration sur mesure.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Photographie</h3>
+                    <p>Immortalisez vos moments précieux avec nos photographes experts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="section-title">
+                    <h2>À Propos de Nous</h2>
+                </div>
+                <p>Nous sommes une entreprise spécialisée dans la location de salles événementielles depuis plus de 15 ans. Notre mission est de vous offrir des espaces uniques et des services de qualité pour que chaque événement soit une réussite.</p>
+                <p>Nous mettons à votre disposition une équipe d'experts passionnés qui vous accompagnera à chaque étape de l'organisation de votre événement, de la planification initiale à la réalisation finale.</p>
+                <p>Notre engagement : faire de votre événement un moment inoubliable, dans un cadre exceptionnel, avec un service irréprochable.</p>
+                <a href="#contact" class="btn">Nous contacter</a>
+            </div>
+            <div class="about-img">
+                <img src="1.jpg" alt="Équipe">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contactez-Nous</h2>
+                <p>Planifions ensemble votre événement</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Adresse</h3>
+                            <p>123 Avenue des Événements, 75001 Abidjan</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Téléphone</h3>
+                            <p>+225 05-65-52-88-79</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>contact@evenium.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div id="Horaires">
+                            <h3>Horaires d'ouverture</h3>
+                            <p>Lun - Ven: 9h00 - 18h00</p>
+                            <p>Sam: 10h00 - 16h00</p>
+                           <p id="heure-actuelle" style="font-weight:bold; margin-top:10px;"></p> 
+                            <p id="message-fermeture" style="color:red; font-weight:bold; display:none;">
+                             Nous sommes fermés, revenez demain à 9h00 </p>
+                          
+                       </div>
+                       
+                          
+                        
+                           </div>
+                           
+                      
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Événium</h3>
+                    <p>Votre partenaire pour des événements réussis et mémorables depuis 2008.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#salles">Nos salles</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Nos salles</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Grande Salle de Réception</a></li>
+                        <li><a href="#">Salle de Conférence Moderne</a></li>
+                        <li><a href="#">Salon Intime</a></li>
+                        <li><a href="#">Espace Extérieur</a></li>
+                        <li><a href="#">Salles Privées</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Avenue des Événements, 75001 Abidjan</li>
+                        <li><i class="fas fa-phone"></i> +225 01 23 45 67 89</li>
+                        <li><i class="fas fa-envelope"></i>Jojo@AbidjanEvèn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 ROMANE DEV - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reservation  -->
+    <div class="modal" id="reservationModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Réserver une salle</h2>
+            <form id="reservationForm">
+                <div class="form-group">
+                    <label for="reservation-salle">Salle sélectionnée</label>
+                    <input type="text" id="reservation-salle" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="reservation-name">Nom complet</label>
+                    <input type="text" id="reservation-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="reservation-email">Email</label>
+                    <input type="email" id="reservation-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="reservation-phone">Téléphone</label>
+                    <input type="tel" id="reservation-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="reservation-date">Date de l'événement</label>
+                    <input type="date" id="reservation-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="reservation-guests">Nombre d'invités</label>
+                    <input type="number" id="reservation-guests" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="reservation-message">Message supplémentaire</label>
+                    <textarea id="reservation-message"></textarea>
+                </div>
+                <button type="submit" class="btn">Envoyer la demande</button>
+            </form>
+        </div>
+    </div>
+
+<!-- Mode de paiement -->
+<div class="modal" id="ModePaiement">
+    <div class="modal-content">
+        <span class="close-modal fermer_Paiement">&times;</span> 
+        <h2>Choisissez votre moyen de paiement</h2>
+        <form id="ModeFrom">
+            <div class="form-group">
+                <input type="radio" id="wave" name="paiement" value="Wave" required>
+                <label for="wave">Wave</label>
+            </div>
+            <div class="form-group">
+                <input type="radio" id="orange-money" name="paiement" value="Orange Money" required>
+                <label for="orange-money">Orange Money</label>
+            </div>
+            <div class="form-group">
+                <input type="radio" id="mtn-money" name="paiement" value="MTN Money" required>
+                <label for="mtn-money">MTN Money</label>
+            </div>
+            <div class="form-group">
+                <input type="radio" id="carte-bancaire" name="paiement" value="Carte Bancaire" required>
+                <label for="carte-bancaire">Carte Bancaire</label>
+            </div>
+            <button type="submit" class="btn">Valider le paiement</button>
+        </form>
+    </div>
+</div>
+    <script src="doss.js"> </script>
+</body>
+</html>
