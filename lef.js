@@ -93,33 +93,33 @@ if (typedEl && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 // Formulaire de contact
 // ---------------------------------------------------------
 const form = document.getElementById("contact-form");
-const status = document.getElementById("form-status");
+const formStatus = document.getElementById("form-status");
 
 if (form) {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     if (!window.emailjs) {
-      status.textContent = "Service d'envoi indisponible pour le moment.";
-      status.className = "form-status err";
+      formStatus.textContent = "Service d'envoi indisponible pour le moment.";
+      formStatus.className = "form-status err";
       return;
     }
 
     const submitBtn = form.querySelector("button[type=submit]");
     submitBtn.disabled = true;
-    status.textContent = "Envoi en cours…";
-    status.className = "form-status";
+    formStatus.textContent = "Envoi en cours…";
+    formStatus.className = "form-status";
 
     emailjs.sendForm("service_6zko1u6", "template_wnuqjjq", "#contact-form").then(
       () => {
-        status.textContent = "Message envoyé ! Je vous réponds rapidement.";
-        status.className = "form-status ok";
+        formStatus.textContent = "Message envoyé ! Je vous réponds rapidement.";
+        formStatus.className = "form-status ok";
         form.reset();
         submitBtn.disabled = false;
       },
       (error) => {
-        status.textContent = "Une erreur est survenue, réessayez dans un instant.";
-        status.className = "form-status err";
+        formStatus.textContent = "Une erreur est survenue, réessayez dans un instant.";
+        formStatus.className = "form-status err";
         submitBtn.disabled = false;
         console.error("EmailJS error:", error);
       }
