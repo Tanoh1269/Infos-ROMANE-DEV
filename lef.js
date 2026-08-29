@@ -100,26 +100,26 @@ if (form) {
     event.preventDefault();
 
     if (!window.emailjs) {
-      statusbar.textContent = "Service d'envoi indisponible pour le moment.";
-      statusbar.className = "form-status err";
+      status.textContent = "Service d'envoi indisponible pour le moment.";
+      status.className = "form-status err";
       return;
     }
 
     const submitBtn = form.querySelector("button[type=submit]");
     submitBtn.disabled = true;
-    statusbar.textContent = "Envoi en cours…";
-    statusbar.className = "form-status";
+    status.textContent = "Envoi en cours…";
+    status.className = "form-status";
 
     emailjs.sendForm("service_6zko1u6", "template_wnuqjjq", "#contact-form").then(
       () => {
-        statusbar.textContent = "Message envoyé ! Je vous réponds rapidement.";
-        statusbar.className = "form-status ok";
+        status.textContent = "Message envoyé ! Je vous réponds rapidement.";
+        status.className = "form-status ok";
         form.reset();
         submitBtn.disabled = false;
       },
       (error) => {
-        statusbar.textContent = "Une erreur est survenue, réessayez dans un instant.";
-        statusbar.className = "form-status err";
+        status.textContent = "Une erreur est survenue, réessayez dans un instant.";
+        status.className = "form-status err";
         submitBtn.disabled = false;
         console.error("EmailJS error:", error);
       }
